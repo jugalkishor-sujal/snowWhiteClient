@@ -1,0 +1,29 @@
+{
+  "author": "Bernard Lee",
+  "name": "ngSnowWhite",
+  "main": "server.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jugalkishor-sujal/snowWhite",
+  "licenses": {
+    "type": "MIT",
+    "url": "https://raw.github.com/jugalkishor-sujal/snowWhite/master/LICENSE"
+  },
+  "bugs": "https://github.com/jugalkishor-sujal/snowWhite/issues",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jugalkishor-sujal/snowWhite.git"
+  },
+  "dependencies": {
+    "angular": "~1.2.25",
+    "jquery": "~2.1.1",
+    "angular-ui-router": "~0.2.11",
+    "angular-bootstrap": "~0.11.0",
+    "angular-translate": "~2.4.0",
+    "angular-resource": "~1.2.25",
+    "angular-cookies": "~1.2.25",
+    "angular-translate-storage-local": "~2.4.0",
+    "angular-translate-loader-static-files": "~2.4.0",
+    "ng-file-upload": "~1.6.9"
+  },
+  "devDependencies": {}
+}

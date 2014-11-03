@@ -1,0 +1,129 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark">
+            <i class="fa-fw fa fa-home"></i>Users <span>> Management</span>
+        </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 txt-color-blueDark">
+        <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+        </div>
+        <div class="widget-body no-padding">
+
+            <form action="" class="smart-form">
+
+                <fieldset>
+                    <section>
+                        <label class=" control-label  text-right">Profile Picture: </label>
+                        <div>
+                            <img src="{{profile.image_path}}" alt="Picture Not Found!!" class="online" style="width: 100px; height: 100px" /></div>
+
+                    </section>
+                    <section>
+                        <label class="label">File input</label>
+                        <label for="file" class="input input-file">
+                            <div class="button">
+                                <input type="file" name="file" ng-file-select="onFileSelect($files)" onchange="this.parentNode.nextSibling.value = this.value">Browse
+                            </div>
+                            <input type="text" placeholder="Include some files" readonly="">
+                        </label>
+                    </section>
+                    <section>
+                        <label class=" control-label  text-right">Username : </label>
+                        <input class="form-control" placeholder="Default Text Field" ng-model="profile.username" type="text">
+                    </section>
+                    <section>
+                        <label class=" control-label  text-right">Password : </label>
+                        <input class="form-control" placeholder="Default Text Field" ng-model="profile.password" type="text">
+                    </section>
+                    <section>
+                        <label class=" control-label  text-right">Email Address : </label>
+                        <input class="form-control" placeholder="Default Text Field" ng-model="profile.email" type="text">
+                    </section>
+                    <section>
+                        <label class=" control-label  text-right">Role : </label>
+                        <input class="form-control" placeholder="Default Text Field" ng-model="profile.role" type="text">
+                    </section>
+                    <section>
+                        <label class="control-label  text-right">Date Of Birth : </label>
+                        <input class="form-control" placeholder="Default Text Field" ng-model="profile.dob" type="text">
+                    </section>
+                    <section>
+                        <label class="control-label  text-right">Status : </label>
+                        <label class="textarea textarea-expandable">
+                            <textarea class="form-control" rows="3" ng-model="profile.status" placeholder="Default Text Field"></textarea>
+                        </label>
+                    </section>
+                </fieldset>
+
+               
+                <footer>
+                    <button type="submit" class="btn btn-primary" ng-click="addUser()">
+                        Save
+                    </button>
+                    <button type="button" class="btn btn-default" onclick="resetAll()">
+                        Reset
+                    </button>
+                </footer>
+            </form>
+        </div>
+         <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 page-title txt-color-blueDark">
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            User Picture
+          
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            Username
+          
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            Email
+            
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            Status
+           
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            Date Of Birth
+           
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            Action
+           
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-repeat="user in users" data-ng-model="files">
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                        <img src="{{user.image_path}}" width="80px" height="80px"/>
+                            </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            {{user.username}}
+            
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            {{user.email}}
+            
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            {{user.status}}
+           
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            {{user.dob| date:'d MMMM yyyy'}}
+           
+                        </div> 
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+           <button type="button" class="btn btn-primary" ng-click="deleteUser(user._id)">
+                        Delete
+                    </button>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+</div>

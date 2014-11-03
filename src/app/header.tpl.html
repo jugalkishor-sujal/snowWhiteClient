@@ -1,0 +1,387 @@
+<style>
+    .btn-primary1 {
+        min-height:45px
+    }
+    .dropdown-menu {
+        margin:-10px -67px 0;
+        padding:5px 0px;
+    }
+    .dropdown-menu > li > a > i {
+        margin-right:10px;
+        width:16px;
+    }
+    .dropdown-menu > li > a  {
+      padding:  3px 3px 3px 1px;
+      padding-left:11px;
+      padding-right:11px;
+    }
+    .img-circle {
+        max-width:40px;
+    }
+    .user-info small {
+        display:block;
+    }
+		</style>
+
+			<span ng-class="loginCheck()"></span>
+    <div id="logo-group">
+
+        <!-- PLACE YOUR LOGO HERE -->
+        <span id="logo">
+            <img src="assets/img/logo.png" alt="Snow-White" style="height: 52px; width: 246px; margin-top: -12px;margin-left:-10px">
+        </span>
+        <!-- END LOGO PLACEHOLDER -->
+
+    </div>
+			
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+				
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right hidden-lg hidden-sm hidden-md">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+				
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="/Setting" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
+							<img src="{{current.userImage}}" alt="Jugal Kishor" class="online" />  
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="/Profile" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="/Login" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				
+
+				<!-- search mobile button (this is hidden till mobile view port) -->
+			<!--	<div id="search-mobile" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
+				</div>-->
+				<!-- end search mobile button -->
+
+				<!-- input: search field -->
+				<div  class="header-dropdown-list pull-right">
+                    <ul class="list-unstyled">
+                    <li class="light-blue">
+							<a data-toggle="dropdown" class="btn btn-primary1 dropdown-toggle padding0">
+								<img class="online img-circle" src="{{current.userImage}}" alt="Jason's Photo" />
+								<span class="user-info">
+                                 
+                                   					<small>Welcome,</small>
+									{{current.userName}}
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="dropdown-menu">
+                                <li>
+									<a ng-click="goto('Profile')">
+										<i class="ace-icon fa fa-user"></i>
+										Profile
+									</a>
+								</li>
+                                <li>
+									<a ng-click="goto('Inbox')">
+										<i class="ace-icon fa fa-envelope"></i>
+										Mail
+									</a>
+								</li>
+                                <li>
+									<a ng-click="goto('Inbox')">
+										<i class="ace-icon fa fa-user"></i>
+										Alerts And Notifications
+									</a>
+								</li>
+								<li>
+									<a ng-click="goto('Settings')">
+										<i class="ace-icon fa fa-cog"></i>
+										Settings
+									</a>
+								</li>
+
+								
+								<li class="divider"></li>
+
+								<li>
+									<a ng-click="clearLocalStorage()" >
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+                        </ul>
+				</div>
+                <div  class="header-dropdown-list pull-right">
+                   <ul class="list-unstyled notify">
+                       <li class="light-blue ">
+                          <a data-toggle="dropdown" class="btn btn-grey btn-lg dropdown-toggle padding0" >
+								<i class="fa fa-tasks"></i>
+								<span class="badge badge-grey">4</span>
+							</a>
+
+
+                       
+                       <ul class="dropdown-menu dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li >
+									<i class="ace-icon fa fa-check"></i>
+									4 Upload tasks to complete
+								</li>
+
+								<li>
+									<a >
+										<div class="clearfix">
+											<span class="pull-left">Files Update</span>
+											<span class="pull-right">65%</span>
+										</div>
+
+										<div class="progress progress-mini">
+											<div style="width:65%" class="progress-bar"></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a >
+										<div class="clearfix">
+											<span class="pull-left">Network Load</span>
+											<span class="pull-right">35%</span>
+										</div>
+
+										<div class="progress progress-mini">
+											<div style="width:35%" class="progress-bar progress-bar-danger"></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a >
+										<div class="clearfix">
+											<span class="pull-left">Bandwidth usages</span>
+											<span class="pull-right">15%</span>
+										</div>
+
+										<div class="progress progress-mini">
+											<div style="width:15%" class="progress-bar progress-bar-warning"></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a>
+										<div class="clearfix">
+											<span class="pull-left">Tasks completed</span>
+											<span class="pull-right">90%</span>
+										</div>
+
+										<div class="progress progress-mini progress-striped active">
+											<div style="width:90%" class="progress-bar progress-bar-success"></div>
+										</div>
+									</a>
+								</li>
+
+								<li class="dropdown-footer">
+									<a >
+										See tasks with details
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+                           </ul>
+							</li>
+
+                   </ul>
+				</div>
+				<!-- end input: search field -->
+
+			    <div  class="header-dropdown-list pull-right">
+                   <ul class="list-unstyled notify">
+                       <li class="light-blue ">
+                         <a data-toggle="dropdown" class="btn btn-green  btn-lg dropdown-toggle padding0" >
+								<i class="ace-icon fa fa-bell"></i>
+								<span class="badge badge-important">8</span>
+							</a>
+
+                       
+                  <ul class="dropdown-menu dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header ">
+									<i class="ace-icon fa fa-exclamation-triangle"></i>
+									8 Notifications
+								</li>
+
+                                <li>
+                                    <a>
+                                        <div class="clearfix">
+                                            <span class="pull-left">
+                                                <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+                                                New Comments
+                                            </span>
+                                            <span class="pull-right badge badge-info">+12</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+								<li>
+									<a >
+										<i class="btn btn-xs btn-primary fa fa-user"></i>
+										Test user just signed up as an investor ...
+									</a>
+								</li>
+
+								<li>
+									<a >
+										<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+												New Orders
+											</span>
+											<span class="pull-right badge badge-success">+8</span>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a >
+										<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+												New files
+											</span>
+											<span class="pull-right badge badge-info">+11</span>
+										</div>
+									</a>
+								</li>
+
+								<li class="dropdown-footer">
+									<a >
+										See all notifications
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+							</li>
+
+                   </ul>
+				</div>
+
+			    <div  class="header-dropdown-list pull-right">
+                   <ul class="list-unstyled notify">
+                       <li class="light-blue">
+                          <a data-toggle="dropdown" class="btn purple  btn-lg dropdown-toggle padding0" >
+								<i class="ace-icon fa fa-envelope"></i>
+								<span class="badge badge-success">5</span>
+							</a>
+
+
+                       
+                       	<ul class="dropdown-menu-left dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-envelope-o"></i>
+									5 Messages
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar">
+										<li>
+											<a >
+												<img src="assets/img/avatars/1.png" class="msg-photo" alt="Alex's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">User5:</span>
+														I needed seed file for snow-white ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>a moment ago</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a >
+												<img src="assets/img/avatars/1.png" class="msg-photo" alt="Susan's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Investor3:</span>
+														We provide security solutions ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>20 minutes ago</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a >
+												<img src="assets/img/avatars/1.png" class="msg-photo" alt="Bob's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Admin:</span>
+														Please set your daily bandwidth ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>3:15 pm</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+								<li class="dropdown-footer">
+									<a >
+										See all messages
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+							</li>
+
+                   </ul>
+				</div>
+
+				<!-- multiple lang dropdown : find all flags in the image folder -->
+				<ul data-lang-menu="" class="header-dropdown-list hidden-xs drp" data-ng-controller="LangController">
+					<li>
+						<a href="" class="dropdown-toggle" data-toggle="dropdown">
+							<img alt="" class="flag flag-{{ currentLang.flagCode }}" src="assets/img/blank.gif"> <span> {{ currentLang.translation }} </span> <i class="fa fa-angle-down"></i> 
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li data-ng-class="{active: lang == currentLang}" data-ng-repeat="lang in languages">
+								<a href="" data-ng-click="setLang(lang)" ><img class="flag flag-{{ lang.flagCode }}" src="assets/img/blank.gif" /> {{ lang.language }} ({{ lang.translation }}) </a>
+							</li>
+                     
+						</ul>
+					</li>
+				</ul>
+				<!-- end multiple lang -->
+
+			</div>
+			<!-- end pulled right: nav area -->

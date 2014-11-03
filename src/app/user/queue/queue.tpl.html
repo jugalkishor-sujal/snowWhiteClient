@@ -1,0 +1,144 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i>Upload Queue <span>> Panel</span></h1>
+    </div>
+</div>
+<div class="row hidden-mobile">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="page-title txt-color-blueDark">
+            <i class="fa-fw fa fa-picture-o"></i>
+            Progress <span>>
+			Contents </span></h2>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 txt-color-blueDark">
+        <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+        </div>
+        <div class="widget-body no-padding">
+
+            <form action="" class="smart-form">
+                <fieldset>
+                    <section>
+                        <label class="label">File input</label>
+                        <label for="file" class="input input-file">
+                            <div class="button">
+                                <input type="file" name="file" ng-file-select="onFileSelect($files)" data-multiple="true" onchange="this.parentNode.nextSibling.value = this.value">Browse
+                            </div>
+                            <input type="text" placeholder="Include some files" readonly="">
+                        </label>
+                    </section>
+                    <section>
+                        <label class="label">Drag File here for Upload:</label>
+                        <div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class-name-or-function"
+                            ng-show="dropSupported">
+                            drop files here
+                        </div>
+                        <div ng-file-drop-available="dropSupported=true"
+                            ng-show="!dropSupported">
+                            HTML5 Drop File is not supported!
+                        </div>
+                        <button ng-click="upload.abort()">Cancel Upload</button>
+                    </section>
+                </fieldset>
+                
+            </form>
+        </div>
+    </div>
+
+</div>
+<section id="widget-grid" class="">
+	<!-- row -->
+    <div class="row">
+        <article class="col-sm-6 col-md-9 col-lg-12">
+
+            <!-- Widget ID (each widget will need unique ID)-->
+            <div class="jarviswidget jarviswidget-color-greenDark" id="wid-id-2" data-widget-editbutton="true">
+                <!-- widget options:
+				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+				data-widget-colorbutton="false"
+				data-widget-editbutton="false"
+				data-widget-togglebutton="false"
+				data-widget-deletebutton="false"
+				data-widget-fullscreenbutton="false"
+				data-widget-custombutton="false"
+				data-widget-collapsed="true"
+				data-widget-sortable="false"
+
+				-->
+                <header>
+                    <span class="widget-icon"><i class="fa fa-table"></i></span>
+                    <h2>Upload Status </h2>
+
+                </header>
+
+                <!-- widget div-->
+                <div>
+
+                    <!-- widget edit box -->
+                    <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+
+                    </div>
+                    <!-- end widget edit box -->
+
+                    <!-- widget content -->
+                    <div class="widget-body no-padding">
+
+                        <div class="alert alert-info no-margin fade in">
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Size</th>
+                                        <th>Status</th>
+                                        <th>Health</th>
+                                        <th>Down Speed</th>
+                                        <th>Up Speed</th>
+                                        <th>ETA</th>
+                                        <th>Rating</th>
+                                        <th>Seeds/Peers</th>
+                                        <th>Label</th>
+                                        <th>Added</th>
+                                        <th>Completed On</th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-repeat="f in FileInfo">
+                                    <tr>
+                                        <th>{{f.s_no}}</th>
+                                        <th>{{f.Name}}</th>
+                                        <th>{{f.Size}}</th>
+                                        <th>{{f.Status}}</th>
+                                        <th>{{f.Health}}</th>
+                                        <th>{{f.Down_Speed}}</th>
+                                        <th>{{f.Up_Speed}}</th>
+                                        <th>{{f.ETA}}</th>
+                                        <th>{{f.Rating}}</th>
+                                        <th>{{f.Seeds_Peers}}</th>
+                                        <th>{{f.Label}}</th>
+                                        <th>{{f.Added}}</th>
+                                        <th>{{f.Completed_On}}</th>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <!-- end widget content -->
+
+                </div>
+                <!-- end widget div -->
+
+            </div>
+            <!-- end widget -->
+
+        </article>
+    </div>
+</section>

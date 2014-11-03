@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i>Upload <span>> Panel</span></h1>
+    </div>
+</div>
+<div class="row hidden-mobile">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="page-title txt-color-blueDark">
+            <i class="fa-fw fa fa-picture-o"></i>
+            Upload <span>>
+			Contents</span></h2>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 txt-color-blueDark">
+        <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+        </div>
+        <div class="widget-body no-padding">
+
+            <form action="" class="smart-form">
+                <fieldset>
+                    <section>
+                        <label class="label">Note:</label>
+                        <label class="textarea textarea-expandable">
+                            <textarea rows="3" class="custom-scroll"></textarea>
+                        </label>
+                        <div class="note">
+                            <strong>Note:</strong> expands on focus.
+                        </div>
+                    </section>
+                    <section>
+                        <label class="label">File input</label>
+                        <label for="file" class="input input-file">
+                            <div class="button">
+                                <input type="file" name="file" ng-file-select="onFileSelect($files)" onchange="this.parentNode.nextSibling.value = this.value">Browse
+                            </div>
+                            <input type="text" placeholder="Include some files" readonly="">
+                        </label>
+                    </section>
+                    <section>
+                        <label class="label">Drag File here for Upload:</label>
+                        <div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class-name-or-function"
+                            ng-show="dropSupported">
+                            drop files here
+                        </div>
+                        <div ng-file-drop-available="dropSupported=true"
+                            ng-show="!dropSupported">
+                            HTML5 Drop File is not supported!
+                        </div>
+                        <button ng-click="upload.abort()">Cancel Upload</button>
+                    </section>
+                </fieldset>
+                <footer>
+                    <button type="submit" class="btn btn-primary" ng-click="onFileUpload()">
+                        Submit
+                    </button>
+                    <button type="button" class="btn btn-default" onclick="window.history.back();">
+                        Back
+                    </button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!--    <input type="text" ng-model="myModelObj">
+    <input type="file" ng-file-select="onFileSelect($files)">
+    <input type="file" ng-file-select="onFileSelect($files)" multiple accept="image/*">
+    <div class="button" ng-file-select="onFileSelect($files)" data-multiple="true"></div>-->

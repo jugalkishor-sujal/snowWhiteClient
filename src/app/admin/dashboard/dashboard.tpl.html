@@ -1,0 +1,66 @@
+<div class="row"> 
+<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+ <h1 class="page-title txt-color-blueDark">
+ <i class="fa-fw fa fa-home"></i> Dashboard <span>> My Dashboard</span>
+ </h1> </div> </div> 
+ <section id="widget-grid" class="">  
+ <!-- row --> <div class="row"> <article class="col-sm-12"> 
+ <!-- new widget --> <div class="jarviswidget" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false"> 
+ <header> <span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span> <h2>Live Status </h2> </header> 
+ <!-- widget div--> <div class="no-padding"> <div class="widget-body"> 
+ <!-- content --> <div id="myTabContent" class="tab-content"> 
+ <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1"> 
+ 
+ <div class="row no-space">  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">  <div class="row">
+ 
+ <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> 
+ <span class="text">Current Queue <span class="pull-right">{{configValOB}}/{{configValTICKS}}</span> </span>
+ <div class="progress"> <div class="progress-bar bg-color-blueDark" style="width: {{configValTICKS/configValOB}}%;"></div> </div> </div> 
+ 
+ <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> 
+ <span class="text">Transfered Done<span class="pull-right">{{configValOBL/1000}} GB</span> </span> 
+ <div class="progress"> <div class="progress-bar bg-color-blue" style="width: {{configValOBL/1000}}%;"></div> </div> </div> 
+ 
+ <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> 
+ <span class="text"> Transfer Latency<span class="pull-right">{{configValCBQ/100}}%</span> </span> 
+ <div class="progress"> <div class="progress-bar bg-color-blue" style="width: {{configValCBQ/100}}%;"></div> </div> </div> 
+ 
+ <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> 
+ <span class="text"> Transfer Through-put <span class="pull-right">{{configValORDERS/10}}%</span> </span> 
+ <div class="progress"> <div class="progress-bar bg-color-greenLight" style="width: {{configValORDERS/10}}%;"></div> </div> </div>    
+ 
+ </div>  </div> </div> 
+ 
+ <div class="row no-space">  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 show-stats">  <div class="row"> 
+ 
+ <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6">  
+ <highchart  id="chartORDERS" config="configORDERS" ></highchart> 
+ <span class="percent percent-sign">{{configValORDERS/10}}</span> 
+ <span class="easy-pie-title">N/w Load <i class="fa fa-caret-up icon-color-bad"></i> </span> 
+ <ul class="smaller-stat hidden-sm pull-right"> 
+ <li> <span class="label bg-color-greenLight"><i class="fa fa-caret-up"></i> {{configValORDERS_MAX}}%</span> </li> 
+ <li> <span class="label bg-color-blue"><i class="fa fa-caret-down"></i> {{configValORDERS_MIN}}%</span> </li> 
+ </ul> 
+ <div class="sparkline txt-color-blue hidden-sm hidden-md pull-right" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">  
+ </div> </div> 
+ 
+ <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6">
+ <highchart  id="chartORDERS" config="configMATCHES" ></highchart> 
+ <span class="easy-pie-title"> Disk Space <i class="fa fa-caret-down icon-color-good"></i></span> 
+ <ul class="smaller-stat hidden-sm pull-right"> 
+ <li> <span class="label bg-color-greenLight"><i class="fa fa-caret-up"></i> {{configValORDERS_MAX}}%</span> </li> 
+ <li> <span class="label bg-color-blue"><i class="fa fa-caret-down"></i> {{configValORDERS_MIN}}%</span> </li> 
+ </ul> 
+ <div class="sparkline txt-color-blue hidden-sm hidden-md pull-right" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">  
+ </div> </div> 
+ 
+ </div> </div> </div> 
+ 
+ </div>  
+ </div> <!-- end s1 tab pane -->  
+ </div>  <!-- end content --> </div>  
+ </div> <!-- end widget div --> 
+ <!-- end widget --> 
+ </article> </div> 
+ <timer interval="1000" class="hidden">{{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</timer> 
+ </section>

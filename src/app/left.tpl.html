@@ -1,0 +1,136 @@
+﻿<style type="text/css">
+    .sidebar-shortcuts {
+        padding: 4px;
+        text-align: center;
+    }
+
+    .btn41 {
+        width: 40px;
+        padding: 6px 12px !important;
+        border: none !important;
+    }
+</style>
+<script>
+
+    //$(document).ready(function () {
+    //    $("li").each(function (index) {
+    //        $(this).on('click', function (e) {
+    //            if ($(this).find('ul > li:has(active)')) {
+    //                $(this).removeClass('active');
+    //                $(this).removeClass().addClass('active');
+    //            }
+    //            else {
+    //                $(this).removeClass('active');
+    //            }
+    //            //$("li").each(function (index) {
+    //            //    if ($(this).hasClass('active')) {
+    //            //        $(this).removeClass('active');
+    //            //    }
+    //            //});
+    //            //if ($(this).hasClass('active')) {
+    //            //    $(this).removeClass('active');
+    //            //}
+    //            //else {
+    //            //    $(this).addClass('active');
+    //            //}
+    //        });
+    //    });
+    //});
+
+</script>
+
+<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+        <a class="btn btn-success1 btn41" ng-click="goto('CreateOrder')">
+            <i class=" fa fa-signal"></i>
+        </a>
+        <a class="btn btn-info1 btn41" ng-click="goto('Calendar')">
+            <i class=" fa fa-calendar"></i>
+        </a>
+        <a class="btn btn-warning1 btn41" ng-click="goto('Profile')">
+            <i class=" fa fa-users"></i>
+        </a>
+        <a class="btn btn-danger1 btn41" ng-click="goto('Settings')">
+            <i class=" fa fa-cogs"></i>
+        </a>
+    </div>
+</div>
+
+
+<!-- User info -->
+
+<!-- end user info -->
+
+<!-- NAVIGATION : This navigation is also responsive
+
+			To make this navigation dynamic please make sure to link the node
+			(the reference to the nav > ul) after page load. Or the navigation
+			will not initialize.
+			-->
+
+
+<!-- end user info -->
+<div id="admin" ng-show="current.loginType  === 1">
+    <navigation>
+    <nav:group  data-icon="fa fa-lg fa fa-pencil-square-o" title="Main Menu" >
+    <nav:item data-view="admin/dashboard" data-icon="fa fa-lg fa-fw fa-dashboard" title="Dashboard" />
+    <nav:item data-view="admin/users" data-icon="fa fa-lg fa-fw fa-list-alt" title="Users" />        
+    
+    <nav:group  data-icon="fa fa-lg fa fa-pencil-square-o" title="Configuration" >
+        <nav:item data-view="admin/config" data-icon="fa fa-lg fa-fw fa-cog" title="Settings" />
+        <nav:item data-view="admin/profile" data-icon="fa fa-lg fa-fw fa-user" title="Profile" />
+    </nav:group>
+    <nav:item ng-click="clearLocalStorage()" data-icon="fa fa-lg fa-fw fa-sign-out" title="Logout" />
+    </nav:group>
+    </navigation>
+</div>
+<div id="investor" ng-show="current.loginType === 2">
+    <navigation>
+    <nav:group  data-icon="fa fa-lg fa fa-pencil-square-o" title="Main Menu" >
+    <nav:item data-view="investor/dashboard" data-icon="fa fa-lg fa-fw fa-dashboard" title="Dashboard" />
+    <nav:item data-view="investor/list" data-icon="fa fa-lg fa-fw fa-list-alt" title="History" />        
+    <nav:item data-view="investor/queue" data-icon="fa fa-lg fa-fw fa-flag" title="Upload Queue" />
+    <nav:item data-view="investor/upload" data-icon="fa fa-lg fa-fw fa-upload" title="Upload" />
+    <nav:item data-view="investor/download" data-icon="fa fa-lg fa-fw fa-download" title="Download" />
+    <nav:group  data-icon="fa fa-lg fa fa-pencil-square-o" title="Configuration" >
+        <nav:item data-view="investor/config" data-icon="fa fa-lg fa-fw fa-cog" title="Settings" />
+        <nav:item data-view="investor/profile" data-icon="fa fa-lg fa-fw fa-user" title="Profile" />
+    </nav:group>
+    <nav:item ng-click="clearLocalStorage()" data-icon="fa fa-lg fa-fw fa-sign-out" title="Logout" />
+    </nav:group>
+    </navigation>
+</div>
+<div id="user" ng-show="current.loginType === 3">
+    <navigation>
+    <nav:group  data-icon="fa fa-lg fa fa-pencil-square-o" title="Main Menu" >
+    <nav:item data-view="user/dashboard" data-icon="fa fa-lg fa-fw fa-dashboard" title="Dashboard" />
+    <nav:item data-view="user/list" data-icon="fa fa-lg fa-fw fa-list-alt" title="History" />        
+    <nav:item data-view="user/queue" data-icon="fa fa-lg fa-fw fa-flag" title="Upload Queue" />
+    <nav:item data-view="user/upload" data-icon="fa fa-lg fa-fw fa-upload" title="Upload" />
+    <nav:item data-view="user/download" data-icon="fa fa-lg fa-fw fa-download" title="Download" />
+    <nav:group  data-icon="fa fa-lg fa fa-pencil-square-o" title="Configuration" >
+        <nav:item data-view="user/config" data-icon="fa fa-lg fa-fw fa-cog" title="Settings" />
+        <nav:item data-view="user/profile" data-icon="fa fa-lg fa-fw fa-user" title="Profile" />
+    </nav:group>
+    <nav:item ng-click="clearLocalStorage()" data-icon="fa fa-lg fa-fw fa-sign-out" title="Logout" />
+    </nav:group>
+    </navigation>
+</div>
+<div id="operator" ng-show="current.loginType === 4">
+    <navigation>
+    <nav:group  data-icon="fa fa-lg fa fa-pencil-square-o" title="Main Menu" >
+    <nav:item data-view="operator/dashboard" data-icon="fa fa-lg fa-fw fa-dashboard" title="Dashboard" />
+    <nav:item data-view="operator/list" data-icon="fa fa-lg fa-fw fa-list-alt" title="History" />        
+    <nav:item data-view="operator/queue" data-icon="fa fa-lg fa-fw fa-flag" title="Upload Queue" />
+    <nav:item data-view="operator/upload" data-icon="fa fa-lg fa-fw fa-upload" title="Upload" />
+    <nav:item data-view="operator/download" data-icon="fa fa-lg fa-fw fa-download" title="Download" />
+    <nav:group  data-icon="fa fa-lg fa fa-pencil-square-o" title="Configuration" >
+        <nav:item data-view="operator/config" data-icon="fa fa-lg fa-fw fa-cog" title="Settings" />
+        <nav:item data-view="operator/profile" data-icon="fa fa-lg fa-fw fa-user" title="Profile" />
+    </nav:group>
+    <nav:item ng-click="clearLocalStorage()" data-icon="fa fa-lg fa-fw fa-sign-out" title="Logout" />
+    </nav:group>
+    </navigation>
+</div>
+
+<span class="minifyme" data-action="minifyMenu"><i class="fa fa-arrow-circle-left hit"></i></span>
